@@ -55,21 +55,27 @@ A continuación, se documenta el cumplimiento de los ejercicios solicitados en l
 ### Ejercicio 1 – Conexión y verificación de la API
 Se realiza una petición GET al endpoint raíz (`/`). Se muestra la respuesta exitosa en pantalla, confirmando la conexión y los permisos de tráfico.
 
+![Evidencia Ejercicio 1](Screenshots/api.jpeg)
 
 ### Ejercicio 2 – Pantalla de Registro
 La aplicación envía una petición POST a `/register` con un payload JSON. 
 * **Caso Exitoso:** El usuario es registrado correctamente.
 * **Caso Duplicado:** Se notifica al usuario que las credenciales ya existen.
 
+![Evidencia caso exitoso](Screenshots/RegistroCorrecto.jpeg)
+![Evidencia caso duplicado](Screenshots/RegistroDuplicado.jpeg)
 
 ### Ejercicio 3 – Pantalla de Login
 La aplicación envía una petición POST a `/login`. Navega a la pantalla de bienvenida o muestra un mensaje de error.
+
+![Evidencia Inicio correcto](Screenshots/InicioCorrecto.jpeg)
+![Evidencia usuario no encontrado](Screenshots/UsuarioNoEncontrado.jpeg)
 
 
 ### Ejercicio 4 – Manejo de errores de red
 Se implementó un bloque de manejo de errores (`onFailure`). Al detener el contenedor de Docker e intentar hacer una petición, la aplicación no se cierra abruptamente, sino que muestra un mensaje amigable.
 
-
+![Evidencia servidor out](Screenshots/ServidorOut.jpeg)
 
 ---
 **Integrantes del equipo:**
