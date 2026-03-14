@@ -1,6 +1,8 @@
 package com.example.apirestclient
 
+import android.content.Intent // <-- Importación necesaria para navegar
 import android.os.Bundle
+import android.widget.Button // <-- Importación necesaria para el botón
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import retrofit2.Call
@@ -14,11 +16,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Enlazamos las vistas del XML con nuestro código
         val tvApiResponse = findViewById<TextView>(R.id.tvApiResponse)
+        val btnGoToRegister = findViewById<Button>(R.id.btnGoToRegister) // <-- Buscamos tu nuevo botón
 
-        // 1. Configurar Retrofit con la IP del emulador
+        // --- LÓGICA DE NAVEGACIÓN ---
+        btnGoToRegister.setOnClickListener {
+            // Creamos el "boleto de viaje" desde esta Activity hacia RegisterActivity
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent) // ¡Arranca el viaje a la otra pantalla!
+        }
+
+        // --- LÓGICA DE RED (EJERCICIO 1) ---
+        // 1. Configurar Retrofit con la IP del dispositivo físico
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:5000/")
+            .baseUrl("http://192.168.100.66:5000/")
             .addConverterFactory(ScalarsConverterFactory.create()) // Para recibir texto simple
             .build()
 
