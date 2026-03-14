@@ -25,7 +25,7 @@ class RegisterActivity : AppCompatActivity() {
 
         // CAMBIO: Se usa 10.0.2.2 para conectar desde el emulador al host (PC)
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://10.0.2.2:5000/")
+            .baseUrl("http://192.168.100.66:5000/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
